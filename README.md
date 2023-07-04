@@ -1,7 +1,7 @@
 # Практическая работа 12
 Проект Mesto. Миграция проекта на React.
 
-https://annaatin.github.io/react-mesto-auth/
+https://annaatin.github.io/sign-in
 
 **Интро**
 
