@@ -201,7 +201,7 @@ function App() {
           path="/sign-in"
           element={<Login onLogin={handleLogin} />}
         />
-          <Route path="/react-mesto-auth"
+          <Route path="/"
             element = {<ProtectedRoute
             loggedIn={loggedIn}
             element={Main}
