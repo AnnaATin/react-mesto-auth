@@ -77,10 +77,7 @@ class Api {
       })
       .then(this._checkResponse)
     }
-  
-    getAllData() {
-      return Promise.all([this.getInitialCards(), this.getUserInfo()])
-    }
+    
   }
   
   const api = new Api({
