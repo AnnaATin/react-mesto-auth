@@ -1,9 +1,17 @@
-import React from 'react'
-import Card from './Card'
-import { CurrentUserContext } from '../contexts/CurrentUserContext'
+import React from "react";
+import Card from "./Card";
+import { CurrentUserContext } from "../contexts/CurrentUserContext";
 
-function Main({onEditAvatar, onEditProfile, onAddPlace, onCardClick, handleCardLike, handleCardDelete, cards}) {
-  const currentUser = React.useContext(CurrentUserContext)
+function Main({
+  onEditAvatar,
+  onEditProfile,
+  onAddPlace,
+  onCardClick,
+  handleCardLike,
+  handleCardDelete,
+  cards,
+}) {
+  const currentUser = React.useContext(CurrentUserContext);
 
   return (
     <main className="main">
@@ -18,8 +26,7 @@ function Main({onEditAvatar, onEditProfile, onAddPlace, onCardClick, handleCardL
             type="button"
             className="profile__avatar-edit-button"
             onClick={onEditAvatar}
-          >
-          </button>
+          ></button>
         </div>
         <div className="profile__info">
           <div className="profile__block">
@@ -28,8 +35,7 @@ function Main({onEditAvatar, onEditProfile, onAddPlace, onCardClick, handleCardL
               type="button"
               className="profile__edit-button"
               onClick={onEditProfile}
-            >
-            </button>
+            ></button>
           </div>
           <h2 className="profile__description">{currentUser.about}</h2>
         </div>
@@ -37,21 +43,21 @@ function Main({onEditAvatar, onEditProfile, onAddPlace, onCardClick, handleCardL
           type="button"
           className="profile__add-button"
           onClick={onAddPlace}
-        >
-        </button>
+        ></button>
       </section>
       <section className="elements">
-          {
-            cards.map((card) => <Card key={card._id}
+        {cards.map((card) => (
+          <Card
+            key={card._id}
             card={card}
             onCardClick={onCardClick}
             onCardLike={handleCardLike}
             onCardDelete={handleCardDelete}
-            />)
-          }
+          />
+        ))}
       </section>
     </main>
-  )
+  );
 }
 
-export default Main
+export default Main;

@@ -1,26 +1,26 @@
-import React from 'react'
-import PopupWithForm from './PopupWithForm'
-import { CurrentUserContext } from '../contexts/CurrentUserContext'
+import React from "react";
+import PopupWithForm from "./PopupWithForm";
+import { CurrentUserContext } from "../contexts/CurrentUserContext";
 
 function EditProfilePopup(props) {
-  const [name, setName] = React.useState('')
-  const [description, setDescription] = React.useState('')
-  const currentUser = React.useContext(CurrentUserContext)
-  
+  const [name, setName] = React.useState("");
+  const [description, setDescription] = React.useState("");
+  const currentUser = React.useContext(CurrentUserContext);
+
   function handleNameChange(e) {
-    setName(e.target.value)
+    setName(e.target.value);
   }
 
   function handleDescriptionChange(e) {
-    setDescription(e.target.value)
+    setDescription(e.target.value);
   }
 
   function handleSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
     props.onUpdateUser({
       name: name,
       about: description,
-    })
+    });
   }
 
   React.useEffect(() => {
@@ -32,16 +32,16 @@ function EditProfilePopup(props) {
 
   return (
     <PopupWithForm
-    title="Редактировать профиль"
-    name="profile-edit"
-    isOpen={props.isOpen}
-    onClose={props.onClose}
-    onSubmit={handleSubmit}
-    buttonText="Сохранить"
-  >
-    <fieldset className = "popup__inputs-container">
-        <div className ="popup__input-container"> 
-            <input
+      title="Редактировать профиль"
+      name="profile-edit"
+      isOpen={props.isOpen}
+      onClose={props.onClose}
+      onSubmit={handleSubmit}
+      buttonText="Сохранить"
+    >
+      <fieldset className="popup__inputs-container">
+        <div className="popup__input-container">
+          <input
             name="name"
             type="text"
             className="popup__input"
@@ -52,11 +52,11 @@ function EditProfilePopup(props) {
             required
             value={name}
             onChange={handleNameChange}
-            />
-            <span className="popup__input-error name-input-error"></span>
-        </div> 
-        <div className ="popup__input-container"> 
-            <input
+          />
+          <span className="popup__input-error name-input-error"></span>
+        </div>
+        <div className="popup__input-container">
+          <input
             name="description"
             type="text"
             className="popup__input"
@@ -67,12 +67,12 @@ function EditProfilePopup(props) {
             required
             value={description}
             onChange={handleDescriptionChange}
-            />
-            <span className="popup__input-error description-input-error"></span>
+          />
+          <span className="popup__input-error description-input-error"></span>
         </div>
-    </fieldset>
-  </PopupWithForm> 
-  )
+      </fieldset>
+    </PopupWithForm>
+  );
 }
 
-export default EditProfilePopup
+export default EditProfilePopup;
