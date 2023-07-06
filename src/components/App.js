@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes, useNavigate, Navigate } from "react-router-dom";
 
 import Header from "./Header";
 import Main from "./Main";
@@ -204,7 +204,7 @@ function App() {
           onSignOut={onSignOut}
         />
         <Routes>
-          <Route path="*" element={<Login />} />
+          <Route path="*" element={<Navigate to="/sign-in" replace />} />
           <Route
             path="/sign-up"
             element={<Register onRegister={handleRegister} />}
